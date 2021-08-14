@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+$primary: #b4f8c8;
+$danger: #ffaebc;
+$info: #a0e7e5;
+$warning: #fbe7c6;
+$white: #ffffff;
+$text-color: #000000;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Cascadia code";
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+h3 {
+  margin: 0;
+}
+
+.btn-primary {
+  background-color: $primary;
+  border: none;
+  border-radius: 2.5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  transition: all 0.15s;
+  &:hover {
+    background-color: $white;
+    color: $text-color;
+  }
+}
