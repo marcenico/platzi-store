@@ -4,16 +4,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+
+const MODULES = [
+  MatButtonModule,
+  MatToolbarModule,
+  MatBadgeModule,
+  MatIconModule,
+  MatCardModule,
+];
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatBadgeModule,
-    MatIconModule,
-  ],
-  exports: [MatButtonModule, MatToolbarModule, MatBadgeModule, MatIconModule],
+  imports: [CommonModule, MODULES],
+  exports: [MODULES],
 })
 export class MaterialModule {}
