@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { ProductsComponent } from './components/products/products.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { DemoComponent } from './components/demo/demo.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { LayoutComponent } from './components/layout/layout.component';
 
 const routes: Routes = [
@@ -16,14 +12,24 @@ const routes: Routes = [
       {
         path: 'home',
         loadChildren: () =>
-          import('./components/home/home.module').then((m) => m.HomeModule),
+          import('./home/home.module').then((m) => m.HomeModule),
       },
-      { path: 'products', component: ProductsComponent },
-      { path: 'products/:id', component: ProductDetailComponent },
-      { path: 'contact', component: ContactComponent },
+      {
+        path: 'products',
+        loadChildren: () =>
+          import('./products/products.module').then((m) => m.ProductsModule),
+      },
+      {
+        path: 'contact',
+        loadChildren: () =>
+          import('./contact/contact.module').then((m) => m.ContactModule),
+      },
     ],
   },
-  { path: 'demo', component: DemoComponent },
+  {
+    path: 'demo',
+    loadChildren: () => import('./demo/demo.module').then((m) => m.DemoModule),
+  },
   { path: '**', component: PageNotFoundComponent },
 ];
 
