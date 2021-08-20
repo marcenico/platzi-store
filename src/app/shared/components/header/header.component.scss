@@ -1,8 +1,13 @@
 nav > a {
-  padding: 5px;
-  text-decoration: none;
+  margin: 0 5px;
+  padding: 5px 10px;
+  transition: font-size 0.3s;
 }
 
 nav > a.active {
-  color: blue;
+  font-size: 18px;
+}
+
+.header-row {
+  width: 100%;
 }
