@@ -23,17 +23,3 @@ body {
 h3 {
   margin: 0;
 }
-
-.btn-primary {
-  background-color: $primary;
-  border: none;
-  border-radius: 2.5px;
-  padding: 10px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-  cursor: pointer;
-  transition: all 0.15s;
-  &:hover {
-    background-color: $white;
-    color: $text-color;
-  }
-}
