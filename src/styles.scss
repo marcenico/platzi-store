@@ -5,9 +5,13 @@ $warning: #fbe7c6;
 $white: #ffffff;
 $text-color: #000000;
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  padding: 0;
   font-family: "Cascadia code";
 }
 
