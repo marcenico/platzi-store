@@ -8,6 +8,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { NavComponent } from './components/nav/nav.component';
 import { ProductTableComponent } from './components/product-table/product-table.component';
 import { ProdcutDashboardComponent } from './components/prodcut-dashboard/prodcut-dashboard.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ProdcutDashboardComponent } from './components/prodcut-dashboard/prodcu
     NavComponent,
     ProdcutDashboardComponent,
     ProductTableComponent,
+    ProductListComponent,
   ],
   imports: [
     CommonModule,
