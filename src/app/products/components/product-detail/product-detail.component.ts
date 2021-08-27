@@ -45,4 +45,25 @@ export class ProductDetailComponent implements OnInit {
       (e) => console.error(e)
     );
   }
+
+  updateProduct() {
+    const editProduct: Product = {
+      id: '2',
+      title: 'Edicion Product',
+      image: 'assets/images/banner-1.jpg',
+      price: 3000,
+      description: 'Nuevo producto',
+    };
+    this.productsService.update('2', editProduct).subscribe(
+      (product: Product) => console.log(product),
+      (e) => console.error(e)
+    );
+  }
+
+  deleteProduct() {
+    this.productsService.delete('2').subscribe(
+      (res: any) => console.log(res),
+      (e) => console.error(e)
+    );
+  }
 }
