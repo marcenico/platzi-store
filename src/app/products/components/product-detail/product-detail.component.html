@@ -1,12 +1,16 @@
-<div *ngIf="product">
-  <div>
-    <img [src]="product.image" alt="" />
+<mat-card *ngIf="product">
+  <div class="crop-image">
+    <img [src]="product.image" [alt]="product.title" />
   </div>
-  <div>
+  <mat-card-content>
     <ul>
       <li>Nombre: {{ product.title }}</li>
       <li>Precio: {{ product.price | currency }}</li>
     </ul>
     <p>{{ product.description }}</p>
-  </div>
-</div>
+  </mat-card-content>
+</mat-card>
+
+<button mat-raised-button color="primary" (click)="createProduct()">
+  Crear Nuevo
+</button>
