@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  urlApi: 'https://platzi-store.herokuapp.com',
+  apiUrl: 'https://platzi-store.herokuapp.com',
 };
