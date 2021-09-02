@@ -58,10 +58,23 @@
               </a>
             </li>
           </ul>
-          <!-- <mat-form-field color="accent" class="full-width">
-                <input [formControl]="emailInput" matInput placeholder="Su correo" type="email">
-              </mat-form-field>
-              <button (click)="registerMail()" [disabled]="emailInput.invalid" mat-raised-button color="accent">Suscribirse</button> -->
+          <mat-form-field color="accent" class="full-width">
+            <input
+              [formControl]="emailField"
+              matInput
+              placeholder="Su correo"
+              type="email"
+            />
+          </mat-form-field>
+
+          <button
+            color="accent"
+            (click)="registerMail()"
+            [disabled]="emailField.invalid"
+            mat-raised-button
+          >
+            Suscribirse
+          </button>
         </div>
       </div>
     </div>
