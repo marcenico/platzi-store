@@ -4,7 +4,6 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
-import { LayoutModule } from '@angular/cdk/layout';
 import { NavComponent } from './components/nav/nav.component';
 import { ProductTableComponent } from './components/product-table/product-table.component';
 import { ProdcutDashboardComponent } from './components/prodcut-dashboard/prodcut-dashboard.component';
@@ -23,7 +22,6 @@ import { ProductListComponent } from './components/product-list/product-list.com
     AdminRoutingModule,
     ReactiveFormsModule,
     MaterialModule,
-    LayoutModule,
   ],
 })
 export class AdminModule {}
