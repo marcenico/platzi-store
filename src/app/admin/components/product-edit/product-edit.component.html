@@ -1,1 +1,53 @@
-<p>product-edit works!</p>
+<form [formGroup]="form" (ngSubmit)="saveProduct($event)">
+  <mat-card>
+    <mat-card-header>Crear producto</mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input
+              matInput
+              type="text"
+              formControlName="title"
+              placeholder="Titulo"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input
+              matInput
+              type="number"
+              formControlName="price"
+              placeholder="Precio"
+            />
+          </mat-form-field>
+          <div *ngIf="price.errors && price.dirty">
+            <p *ngIf="price.hasError('required')">Este campo es requerido</p>
+            <p *ngIf="price.hasError('priceInvalid')">
+              Este campo no es valido (max: 10000)
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <textarea
+              matInput
+              formControlName="description"
+              placeholder="Descripcion"
+            ></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button [disabled]="form.invalid" mat-raised-button type="submit">
+        Guardar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>
