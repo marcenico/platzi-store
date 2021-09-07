@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CustomValidators } from 'src/app/utils/validators';
 import { ProductsService } from '../../../core/services/products.service';
 
 @Component({
@@ -24,7 +25,10 @@ export class ProductFormComponent {
     this.form = new FormGroup({
       id: new FormControl('', [Validators.required]),
       title: new FormControl('', [Validators.required]),
-      price: new FormControl('', [Validators.required]),
+      price: new FormControl('', [
+        Validators.required,
+        CustomValidators.isPriceValid,
+      ]),
       image: new FormControl(''),
       description: new FormControl('', [Validators.required]),
     });
@@ -40,5 +44,9 @@ export class ProductFormComponent {
       },
       (e) => console.error(e)
     );
+  }
+
+  get price() {
+    return this.form.get('price');
   }
 }

@@ -31,6 +31,12 @@
               placeholder="Precio"
             />
           </mat-form-field>
+          <div *ngIf="price.errors && price.dirty">
+            <p *ngIf="price.hasError('required')">Este campo es requerido</p>
+            <p *ngIf="price.hasError('priceInvalid')">
+              Este campo no es valido (max: 10000)
+            </p>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -46,7 +52,9 @@
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button [disabled]="form.invalid" mat-raised-button type="submit">Guardar</button>
+      <button [disabled]="form.invalid" mat-raised-button type="submit">
+        Guardar
+      </button>
     </mat-card-actions>
   </mat-card>
 </form>
