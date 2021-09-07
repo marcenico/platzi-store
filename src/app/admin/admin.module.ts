@@ -8,6 +8,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { ProductTableComponent } from './components/product-table/product-table.component';
 import { ProdcutDashboardComponent } from './components/prodcut-dashboard/prodcut-dashboard.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
     ProdcutDashboardComponent,
     ProductTableComponent,
     ProductListComponent,
+    ProductEditComponent,
   ],
   imports: [
     CommonModule,
