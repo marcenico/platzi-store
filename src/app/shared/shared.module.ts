@@ -7,6 +7,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GroupPipe } from './pipes/group.pipe';
 
 @NgModule({
   declarations: [
@@ -14,12 +15,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     ExponentialPipe,
     HighlightDirective,
+    GroupPipe,
   ],
   exports: [
     FooterComponent,
     HeaderComponent,
     ExponentialPipe,
     HighlightDirective,
+    GroupPipe,
   ],
   imports: [CommonModule, RouterModule, MaterialModule, ReactiveFormsModule],
 })

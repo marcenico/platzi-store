@@ -35,6 +35,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
   },
+  {
+    path: 'order',
+    loadChildren: () =>
+      import('./order/order.module').then((m) => m.OrderModule),
+  },
   { path: '**', component: PageNotFoundComponent },
 ];
 
