@@ -33,7 +33,7 @@ export class RegisterComponent implements OnInit {
         .then(() => {
           this.router.navigate(['/auth/login']);
         })
-        .catch();
+        .catch(() => alert('no es valido'));
     }
   }
 }
