@@ -25,8 +25,12 @@ export class AdminGuard implements CanActivate {
     | boolean
     | UrlTree {
     return this.authService.hasUser().pipe(
-      tap((user) => console.log(user)),
-      map((user) => (user === null ? this.router.parseUrl('/') : true))
+      map((user) => (user === null ? false : true)),
+      tap((hasUser) => {
+        if (!hasUser) {
+          this.router.navigate(['/auth/login']);
+        }
+      })
     );
   }
 }
