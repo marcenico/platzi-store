@@ -1,12 +1,12 @@
-@import "~@angular/material/theming";
-
-$primary: mat-palette($mat-indigo);
+@import 'src/custom-theme';
 
 footer {
   padding: 50px 25px;
   margin-top: 20px;
-  background-color: mat-color($primary);
+  background-color: mat-color($app-primary);
   .box {
+    padding: 10px;
+    text-align: center;
     h3 {
       color: white;
     }
@@ -18,10 +18,13 @@ footer {
       margin: 0px;
       padding: 0px;
       li {
-        margin: 10px 0px;
         a {
           text-decoration: none;
           color: white;
+          transition: transform 0.3s;
+          &:hover {
+            transform: scale(1.05);
+          }
         }
       }
     }

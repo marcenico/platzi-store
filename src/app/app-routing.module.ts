@@ -12,47 +12,41 @@ const routes: Routes = [
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       {
         path: 'home',
-        loadChildren: () =>
-          import('./home/home.module').then((m) => m.HomeModule),
+        loadChildren: () => import('./home/home.module').then((m) => m.HomeModule)
       },
       {
         path: 'products',
-        loadChildren: () =>
-          import('./products/products.module').then((m) => m.ProductsModule),
+        loadChildren: () => import('./products/products.module').then((m) => m.ProductsModule)
       },
       {
         path: 'contact',
-        loadChildren: () =>
-          import('./contact/contact.module').then((m) => m.ContactModule),
+        loadChildren: () => import('./contact/contact.module').then((m) => m.ContactModule)
       },
-    ],
+      {
+        path: 'order',
+        loadChildren: () => import('./order/order.module').then((m) => m.OrderModule)
+      }
+    ]
   },
   {
     path: 'demo',
-    loadChildren: () => import('./demo/demo.module').then((m) => m.DemoModule),
+    loadChildren: () => import('./demo/demo.module').then((m) => m.DemoModule)
   },
   {
     path: 'admin',
     canActivate: [AdminGuard],
-    loadChildren: () =>
-      import('./admin/admin.module').then((m) => m.AdminModule),
+    loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule)
   },
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule)
   },
-  {
-    path: 'order',
-    loadChildren: () =>
-      import('./order/order.module').then((m) => m.OrderModule),
-  },
-  { path: '**', component: PageNotFoundComponent },
+
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
-  ],
-  exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}
