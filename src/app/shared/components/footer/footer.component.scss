@@ -1,4 +1,6 @@
-@import 'src/custom-theme';
+@import '~@angular/material/theming';
+
+$app-primary: mat-palette($mat-deep-purple, 400);
 
 footer {
   padding: 50px 25px;
